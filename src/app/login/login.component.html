@@ -1,0 +1,18 @@
+<div class="login-wrapper">
+  <div class="login-container">
+    <h2 class="login-heading">Login to Your Account</h2>
+    <form [formGroup]="formGroup" (ngSubmit)="loginprocess()" class="login-form">
+      <div class="form-group">
+        <label for="username">Email:</label>
+        <input type="text" formControlName="username" id="username" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" formControlName="password" id="password" placeholder="Enter your password" required>
+      </div>
+      <div class="button-container">
+        <button type="submit" [disabled]="formGroup.invalid" class="login-button">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

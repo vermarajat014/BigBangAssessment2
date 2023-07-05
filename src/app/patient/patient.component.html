@@ -1,0 +1,19 @@
+<div *ngIf="activeDoctors.length > 0; else noDoctors" class="doctor-cards">
+  <h2 class="section-title">Active Doctors:</h2>
+  <div class="card-container">
+    <div *ngFor="let doctor of activeDoctors" class="card shadow doctor-card">
+      <div class="card-body">
+        <h5 class="card-title">{{ doctor.dName }}</h5>
+        <h5 class="card-subtitle">{{ doctor.dId }}</h5>
+
+        <p class="card-text">Specialization: {{ doctor.dSpecialization }}</p>
+        <p class="card-text">Address: {{ doctor.dAddress }}</p>
+        <p class="card-text">Mobile Number: {{ doctor.dMobileNumber }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noDoctors>
+  <p>No active doctors found.</p>
+</ng-template>
